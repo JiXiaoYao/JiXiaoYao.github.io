@@ -1,0 +1,975 @@
+[
+  {
+    "id": 0,
+    "Name": "Air",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 1,
+    "Name": "Stone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 2,
+    "Name": "Grass",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 3,
+    "Name": "Dirt",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 4,
+    "Name": "Cobblestone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 4,
+    "Name": "Cobblestone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 5,
+    "Name": "Oak Wood Plank",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 6,
+    "Name": "Oak Sapling",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 7,
+    "Name": "Bedrock",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 8,
+    "Name": "Flowing Water",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 9,
+    "Name": "Still Water",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 10,
+    "Name": "Flowing Lava",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 11,
+    "Name": "Still Lava",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 12,
+    "Name": "Sand",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": true
+  },
+  {
+    "id": 13,
+    "Name": "Gravel",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": true
+  },
+  {
+    "id": 14,
+    "Name": "Gold Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 15,
+    "Name": "Iron Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 16,
+    "Name": "Coal Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 17,
+    "Name": "Oak Wood",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 18,
+    "Name": "Oak Leaves",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 19,
+    "Name": "Sponge",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 19,
+    "Name": "Sponge",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 20,
+    "Name": "Glass",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 21,
+    "Name": "Lapis Lazuli Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 22,
+    "Name": "Lapis Lazuli Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 24,
+    "Name": "Sandstone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 25,
+    "Name": "Note Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 26,
+    "Name": "Bed",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 27,
+    "Name": "Powered Rail",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 29,
+    "Name": "Sticky Piston",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 30,
+    "Name": "Cobweb",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 31,
+    "Name": "Dead Shrub",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 32,
+    "Name": "Dead Bush",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 33,
+    "Name": "Piston",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 35,
+    "Name": "White Wool",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 37,
+    "Name": "Dandelion",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 38,
+    "Name": "Poppy",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 39,
+    "Name": "Brown Mushroom",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 40,
+    "Name": "Red Mushroom",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 41,
+    "Name": "Gold Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 42,
+    "Name": "Iron Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 43,
+    "Name": "Double Stone Slab",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 44,
+    "Name": "Stone Slab",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 45,
+    "Name": "Bricks",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 46,
+    "Name": "TNT",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 47,
+    "Name": "Bookshelf",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 48,
+    "Name": "Moss Stone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 50,
+    "Name": "Torch",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 51,
+    "Name": "Fire",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 53,
+    "Name": "Oak Wood Stairs",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 54,
+    "Name": "Chest",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 55,
+    "Name": "Redstone Wire",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 56,
+    "Name": "Diamond Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 57,
+    "Name": "Diamond Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 58,
+    "Name": "Crafting Table",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 59,
+    "Name": "Wheat Crops",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 60,
+    "Name": "Farmland",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 61,
+    "Name": "Furnace",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 62,
+    "Name": "Furnace",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 63,
+    "Name": "Standing Sign Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 64,
+    "Name": "Oak Door Block",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 65,
+    "Name": "Ladder",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 66,
+    "Name": "false",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 67,
+    "Name": "Cobblestone Stairs",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 70,
+    "Name": "Stone Pressure Plate",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 72,
+    "Name": "Wooden Pressure Plate",
+    "IsTransparent": false,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 73,
+    "Name": "Redstone Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 74,
+    "Name": "Glowing Redstone Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 75,
+    "Name": "Redstone Torch (off)",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 76,
+    "Name": "Redstone Torch (on)",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 78,
+    "Name": "Snow",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 79,
+    "Name": "Ice",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 80,
+    "Name": "Snow Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 81,
+    "Name": "Cactus",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 82,
+    "Name": "Clay",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 83,
+    "Name": "Sugar Canes",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 85,
+    "Name": "Oak Fence",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 86,
+    "Name": "Pumpkin",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 89,
+    "Name": "Glowstone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 91,
+    "Name": "Jack o'Lantern",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 92,
+    "Name": "Cake Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 95,
+    "Name": "White Stained Glass",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 96,
+    "Name": "Wooden Trapdoor",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 97,
+    "Name": "Stone Monster Egg",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 99,
+    "Name": "Brown Mushroom Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 100,
+    "Name": "Red Mushroom Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 103,
+    "Name": "Melon Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 104,
+    "Name": "Pumpkin Stem",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 105,
+    "Name": "Melon Stem",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 107,
+    "Name": "Oak Fence Gate",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 108,
+    "Name": "Brick Stairs",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 109,
+    "Name": "Stone Brick Stairs",
+    "IsTransparent": true,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 111,
+    "Name": "Lily Pad",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 116,
+    "Name": "Enchantment Table",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 123,
+    "Name": "Redstone Lamp (inactive)",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 124,
+    "Name": "Redstone Lamp (active)",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 125,
+    "Name": "Double Oak Wood Slab",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 126,
+    "Name": "Oak Wood Slab",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 127,
+    "Name": "Cocoa",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 128,
+    "Name": "Sandstone Stairs",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 129,
+    "Name": "Emerald Ore",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 133,
+    "Name": "Emerald Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 134,
+    "Name": "Spruce Wood Stairs",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 135,
+    "Name": "Birch Wood Stairs",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 138,
+    "Name": "Beacon",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 139,
+    "Name": "Cobblestone Wall",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 141,
+    "Name": "Carrots",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 142,
+    "Name": "Potatoes",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 145,
+    "Name": "Anvil",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 152,
+    "Name": "Redstone Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 155,
+    "Name": "Quartz Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 156,
+    "Name": "Quartz Stairs",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 158,
+    "Name": "Dropper",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 159,
+    "Name": "White Hardened Clay",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 160,
+    "Name": "White Stained Glass Pane",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 161,
+    "Name": "Acacia Leaves",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 165,
+    "Name": "Slime Block",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 170,
+    "Name": "Hay Bale",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 173,
+    "Name": "Block of Coal",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 174,
+    "Name": "Packed Ice",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 175,
+    "Name": "Sunflower",
+    "IsTransparent": true,
+    "IsBlock": false,
+    "Gravity": false
+  },
+  {
+    "id": 179,
+    "Name": "Red Sandstone",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 180,
+    "Name": "Red Sandstone Stairs",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 181,
+    "Name": "Double Red Sandstone Slab",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  },
+  {
+    "id": 23,
+    "Name": "Dispenser",
+    "IsTransparent": false,
+    "IsBlock": true,
+    "Gravity": false
+  }
+]
