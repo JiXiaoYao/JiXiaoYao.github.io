@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Minecraft-like games</title>
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <link type="text/css" rel="stylesheet" href="css/icon.css">
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #444;
+        }
+
+        a {
+            color: red;
+        }
+
+        #blocker {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        #instructions {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
+        #heart {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
+        .fatherBody {
+            border-style: outset;
+            border-width: 5px;
+            position: absolute;
+            width: 60vw;
+            height: 5%;
+            margin-left: calc(20vw);
+            margin-top: 90vh;
+            margin-bottom: 0px;
+            background-color: rgba(127,127,127,0.3);
+        }
+
+        .Son {
+            float: left;
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            display: -webkit-flex;
+        }
+
+        .Scelected {
+            float: left;
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            display: -webkit-flex;
+            background-color: rgba(127,127,127,0.75);
+        }
+
+        .icoAuto {
+            vertical-align: middle;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .infoBoard {
+            border-style: outset;
+            border-width: 5px;
+            position: absolute;
+            width: 60vw;
+            height: 10%;
+            margin-left: calc(20vw);
+            margin-top: 75vh;
+            margin-bottom: 0px;
+        }
+
+        .exp {
+            float: left;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            display: -webkit-flex;
+        }
+
+        .Blood {
+            float: left;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            display: -webkit-flex;
+        }
+
+        .progress {
+            overflow: hidden;
+            height: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 30px;
+            background-color: #f7f7f7;
+            background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+            background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+            background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+            background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            width: 408px;
+            margin-right: 12px;
+        }
+
+            .progress .bar {
+                width: 0%;
+                height: 100%;
+                color: #ffffff;
+                float: left;
+                font-size: 12px;
+                text-align: center;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                background-color: #0e90d2;
+                background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+                background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+                background-image: -o-linear-gradient(top, #149bdf, #0480be);
+                background-image: linear-gradient(to bottom, #149bdf, #0480be);
+                background-repeat: repeat-x;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
+                -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-transition: width 0.6s ease;
+                -moz-transition: width 0.6s ease;
+                -o-transition: width 0.6s ease;
+                transition: width 0.6s ease;
+            }
+    </style>
+</head>
+<body>
+    <!--<canvas id="c"></canvas>-->
+    <audio src="./sounds/bgm1.mp3" style="display: none;" controls="controls" preload id="bgm1"></audio>
+    <audio src="./sounds/bgm2.mp3" style="display: none;" controls="controls" preload id="bgm2"></audio>
+    <audio src="./sounds/creeper.ogg" style="display: none;" controls="controls" preload id="creeper"></audio>
+    <audio src="./sounds/boom.ogg" style="display: none;" controls="controls" preload id="boom"></audio>
+    <audio src="./sounds/cow.ogg" style="display: none;" controls="controls" preload id="cow"></audio>
+    <audio src="./sounds/pig.ogg" style="display: none;" controls="controls" preload id="pig"></audio>
+    <div id="info">
+        <a id="fps" target="_blank" rel="noopener">正在生成地图</a>
+    </div>
+    <div class="infoBoard" id="infoBoard">
+        <div class="exp">
+            <div class="progress">
+                <div id="exp" class="bar" style="width: 60%;background:green;">Exp</div>
+            </div>
+        </div>
+        <div class="Blood">
+            <div class="progress">
+                <div id="Blood" class="bar" style="width: 50%;background:red;">Blood</div>
+            </div>
+        </div>
+    </div>
+    <input id="Index" style="visibility: hidden;  position: absolute;" value="1" />
+    <div class="fatherBody">
+        <div id="1" class="Scelected"><div id="1-icon" class="icon items-28-276-0 icoAuto">276</div></div>
+        <div id="2" class="Son"><div id="2-icon" class="icon items-28-2-0 icoAuto">2</div></div>
+        <div id="3" class="Son"><div id="3-icon" class="icon items-28-3-0 icoAuto">3</div></div>
+        <div id="4" class="Son"><div id="4-icon" class="icon items-28-4-0 icoAuto">4</div></div>
+        <div id="5" class="Son"><div id="5-icon" class="icon items-28-5-0 icoAuto">5</div></div>
+        <div id="6" class="Son"><div id="6-icon" class="icon items-28-18-0 icoAuto">18</div></div>
+        <div id="7" class="Son"><div id="7-icon" class="icon items-28-17-0 icoAuto">17</div></div>
+        <div id="8" class="Son"><div id="8-icon" class="icon items-28-8-0 icoAuto">8</div></div>
+        <div id="9" class="Son"><div id="9-icon" class="icon items-28-15-0 icoAuto">15</div></div>
+        <div id="10" class="Son"><div id="10-icon" class="icon items-28-56-0 icoAuto">56</div></div>
+    </div>
+    <div style="position: absolute;  width: 100%;  height: 100%; background-color: rgba(0,0,0,0,0);">
+        <span id="heart" style="font-size:50px">+</span>
+    </div>
+    <div id="blocker">
+
+        <div id="instructions">
+            <span style="font-size:36px">Click to play</span>
+            <br /><br />
+            Move: WASD<br />
+            Jump: SPACE<br />
+            Look: MOUSE<br />
+            Time out: [ESC]<br />
+            Attack / Destroy Block: Left mouse button<br />
+            Place: right mouse button<br />
+            Switch items: mouse wheel<br />
+            Change the contents of the inventory: ← / →<br />
+            If You Want to have creative Mode, please push c<br />
+            Press i to view information about this work
+        </div>
+
+    </div>
+    <script src="js/three.js"></script>
+    <!--<script src="https://threejs.org/build/three.js"></script>-->
+    <script src="js/three.module.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/PointerLockControls.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/perlin.js"></script>
+    <script src="View.js"></script>
+    <script src="World.js"></script>
+    <script src="Config.js"></script>
+    <script src="Entity.js"></script>
+    <script src="Block.js"></script>
+    <script src="User.js"></script>
+    <script src="GameLogic.js"></script>
+    <script src="Builder.js"></script>
+    <script type="text/javascript">
+        function getQueryString(name) {
+            var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+            if (result == null || result.length < 1) {
+                return "";
+            }
+            return result[1];
+        }
+        var creativeMode = false;
+        if (getQueryString("mode") == "creative") {
+            creativeMode = true;
+            document.getElementById("instructions").innerHTML = '<span style="font-size:36px">Click to play</span>            <br /><br />            Move: WASD<br />            Jump: SPACE<br />            Look: MOUSE<br />            Time out: [ESC]<br />            Attack / Destroy Block: Left mouse button<br />            Place: right mouse button<br />            Switch items: mouse wheel<br />            Change the contents of the inventory: ← / →<br />            If You Want to have fight Mode, please push f           <br />           Press i to view information about this work';
+            document.getElementById("infoBoard").style.display = "none";
+        }
+        //import * as THREE from './js/three.module.js';
+
+        // 初始化
+        var keys = new Array;
+        var MapData = Config.GetMap();
+        var BlockConfig = Config.GetBlockConfig();
+        var OffsetAngle = { x: 0, y: 0, z: 0 }
+
+        var view = new View();
+        view.SetUp(0x87CEEB, THREE)
+        view.EnableShadow(THREE);
+        //view.LoadTexture('./textures/long/texture.png');
+        view.LoadTexture('./textures/test/texture.png');
+        var world = new World(MapData, view, Block.GetBlockList(BlockConfig));
+        view.world = world;
+        var game = new GameLogic(5, world, view, new Builder(world), function () {
+            //     return player.coordinate;
+            return player.Entity.position;
+        }, creativeMode);
+
+
+        // create an AudioListener and add it to the camera
+        //var listener = new THREE.AudioListener();
+        //view.scene.add(listener);
+
+        //// create a global audio source
+        //var sound = new THREE.Audio(listener);
+
+        //// load a sound and set it as the Audio object's buffer
+        //var audioLoader = new THREE.AudioLoader();
+        //audioLoader.load('sounds/creeper.ogg', function (buffer) {
+        //    sound.setBuffer(buffer);
+        //    sound.setLoop(true);
+        //    sound.setVolume(0.5);
+        //    sound.play();
+        //});
+
+
+
+        //场景绘制
+
+        function Frame() {
+            view.frames++;
+            requestAnimationFrame(Frame);
+            view.renderer.render(view.scene, view.camera);
+        }
+        Frame();
+        //var player = new Player("", new Coordinate(0, 64, 0), new Coordinate(0, 0, 0));
+        var player = new User("Steve", { x: 0, y: 64, z: 20 }, view, world);
+        game.Player = player;
+        //   player.Speed = 0.1;
+        var fps
+        window.setInterval(function () { // 计算WebGL fps
+            fps = view.frames;
+            view.frames = 0;
+        }, 1000);
+        window.setInterval(function () { // fps
+            let name = "未选择";
+            let jd = "";
+            let fouce = world.GetFocus();
+            if (fouce != false) {
+                let x = fouce.position.x;
+                let y = fouce.position.y;
+                let z = fouce.position.z;
+                view.DrawMarkBox(x, y, z);
+                let id = world.Get(x, y, z);
+                name = world.Blocks.filter(b => b.id == id)[0].Name;
+                jd = "x:" + fouce.rawposition.x + " y:" + fouce.rawposition.y + " z:" + fouce.rawposition.z;
+            }
+            else {
+                if (view.show != null)
+                    view.show.visible = false;
+            }
+
+            //document.getElementById("fps").innerHTML = "fps:" + fps + "  坐标:x:" + player.coordinate.x.toFixed(2) + " y:" + player.coordinate.y.toFixed(2) + " z:" + player.coordinate.z.toFixed(2) +
+            //    "  焦点方块ID：" + name + "<br /> 交点:" + jd;
+            document.getElementById("fps").innerHTML = "fps:" + fps + "  坐标:x:" + player.Entity.position.x.toFixed(2) + " y:" + player.Entity.position.y.toFixed(2) + " z:" + player.Entity.position.z.toFixed(2) +
+                "  焦点方块ID：" + name + "<br /> 交点:" + jd;
+        }, 60 / 240);
+
+        window.setInterval(function () {
+            CheckKey();
+            // game.RunTicks();
+            game.Main()
+            document.getElementById("exp").style.cssText = "width: " +
+                (player.exp / player.MaxExp) * 100
+                + "%;background:green;";
+            document.getElementById("Blood").style.cssText = "width: " +
+                (player.blood / player.Maxblood) * 100
+                + "%;background:red;";
+            if (player.blood <= 0) {
+                alert("You are fail!");
+                //view.SetCameraCoordinate(player.coordinate);
+                view.scene.remove(view.directionalLight);
+                view.scene.remove(view.ambientLight);
+            }
+        }, 1000 / 144);
+
+
+        //鼠标类
+
+        var isDown = false;
+        var mouse = new THREE.Vector2();
+        mouse.x = window.innerWidth / 2;
+        mouse.y = window.innerHeight / 2; // 监控鼠标
+        function onMouseMove(event) {
+            var X = ((event.clientX - mouse.x) / window.innerWidth);
+            var Y = ((event.clientY - mouse.y) / window.innerHeight);
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+            //if (isDown)
+            //    player.ChangePerspective((X * Math.PI) * -1, (Y * Math.PI) * -1);
+        }
+        window.addEventListener('mousemove', onMouseMove, false);
+        var Sqr = 1;
+        var bgm = 1
+        function onMouseDown(event) {
+            var audio = document.getElementById("bgm1");
+            var audio2 = document.getElementById("bgm2");
+            if (audio.paused && audio2.paused && bgm == 1) {
+                audio.play();
+                bgm = 2;
+            }
+
+            if (audio2.paused && audio.paused && bgm == 2) {
+                audio2.play();
+                bgm = 1;
+            }
+
+            if (document.getElementById(document.getElementById("Index").value + "-icon").innerHTML != "276") {
+                let fouce = world.GetFocus();
+                if (fouce != false) {
+                    let x = fouce.position.x;
+                    let y = fouce.position.y;
+                    let z = fouce.position.z;
+                    if (event.button == 0)
+                        world.Set(x, y, z, 0);
+                    if (event.button == 2) {
+                        world.Set(x + fouce.normal.x, y + fouce.normal.y, z + fouce.normal.z, Sqr);
+                    }
+                    world.UpdateChunk(JSON.parse(fouce.ChunkName), { x: x, y: y, z: z });
+                }
+            } else {
+                let min = { x: view.camera.position.x - 10, y: view.camera.position.y - 10, z: view.camera.position.z - 10 };
+                let max = { x: view.camera.position.x + 10, y: view.camera.position.y + 10, z: view.camera.position.z + 10 };
+                game.Attack(view.camera.position, min, max, 10);
+                OffsetAngle.y = 1;
+                //let result = game.findEntity({ x: view.camera.position.x, y: view.camera.position.y, z: view.camera.position.z }, vector);
+                //if (result != null) {
+                //    result.velocity.y += 4.5;
+                //}
+            }
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+            isDown = true;
+            //OffsetAngle.x = Math.PI / 2;
+            //player.plane.rotation.y = Math.PI;
+        }
+        function onMouseWheel(event) {
+            if (event.deltaY > 0) {
+                if (parseInt(document.getElementById("Index").value) == 10)
+                    SetIcon(1, null, true);
+                else
+                    SetIcon(parseInt(document.getElementById("Index").value) + 1, null, true);
+            }
+            else {
+                if (parseInt(document.getElementById("Index").value) == 1)
+                    SetIcon(10, null, true);
+                else
+                    SetIcon(parseInt(document.getElementById("Index").value) - 1, null, true);
+            }
+            if (document.getElementById("Index").value == 1)
+                player.plane.visible = true;
+            else
+                player.plane.visible = false;
+        }
+        window.addEventListener("wheel", onMouseWheel);
+        window.addEventListener('mousedown', onMouseDown, false);
+        function onMouseUp(event) {
+            isDown = false;
+            player.plane.rotation.y = 0;
+            OffsetAngle.y = 0;
+        }
+        window.addEventListener('mouseup', onMouseUp, false);
+
+        /**
+         *
+         * @param {number} index
+         * @param {number} id
+         * @param {boolean} isFocus
+         */
+        function SetIcon(index, id, isFocus) {
+            if (isFocus) {
+                document.getElementById(parseInt(document.getElementById("Index").value)).className = "Son";
+                document.getElementById(index).className = "Scelected";
+                document.getElementById("Index").value = index;
+            }
+            else
+                document.getElementById(index + "-icon").className = "icon items-28-" + id + "-0 icoAuto";
+            Sqr = parseInt(document.getElementById(document.getElementById("Index").value + "-icon").innerHTML);
+        }
+
+        // 方向控制
+
+        var controls = new PointerLockControls(view.camera, document.body);
+        var blocker = document.getElementById('blocker');
+        var instructions = document.getElementById('instructions');
+        instructions.addEventListener('click', function () {
+
+            controls.lock();
+
+        }, false);
+        controls.addEventListener('lock', function () {
+
+            instructions.style.display = 'none';
+            blocker.style.display = 'none';
+
+        });
+        controls.addEventListener('unlock', function () {
+
+            blocker.style.display = 'block';
+            instructions.style.display = '';
+
+        });
+        view.scene.add(controls.getObject());
+
+        var ItemList = 0;
+
+        function CheckKey() { // 按键监听
+            var vector = new THREE.Vector3();
+            view.camera.getWorldDirection(vector);
+            let hasDown = false;
+            if (isKeyDown(87)) { // w
+                player.Move("before", vector);
+                hasDown = true;
+            }
+            if (isKeyDown(83)) { // s
+                player.Move("back", vector);
+                hasDown = true;
+                // player.coordinate.z -= 1;
+            }
+            if (isKeyDown(65)) { // a
+                //mapData.Move("left");
+                hasDown = true;
+                player.Move("left", vector);
+            }
+            if (isKeyDown(68)) { // d
+                //mapData.Move("right");
+                player.Move("right", vector);
+                hasDown = true;
+            }
+            if (isKeyDown(16)) {
+                player.Move("down", vector);
+                hasDown = true;
+            }
+            if (isKeyDown(32)) {
+                player.Move("up", vector);
+                hasDown = true;
+            }
+            if (!hasDown) {
+                player.Stop();
+            }
+        }
+
+        function isKeyDown(keycode) {
+            if (keys[keycode] == "down")
+                return true;
+            else
+                return false;
+        }
+
+        function onDocumentKeyDown(e) {
+            var keycode = e.which;
+            keys[keycode] = "down";
+            if (keycode == 39)
+                if (ItemList >= 0) {
+                    let setp = 0;
+                    for (let x = ItemList * 9; x < (ItemList + 1) * 9 && x < BlockConfig.length; x++) {
+                        let item = BlockConfig[x];
+                        document.getElementById((x - (ItemList * 9) + 2) + "-icon").className = "icon items-28-" + item.id + "-0 icoAuto";
+                        document.getElementById((x - (ItemList * 9) + 2) + "-icon").innerHTML = item.id;
+                        setp = 1;
+                    }
+                    ItemList += setp;
+                }
+            if (keycode == 37)
+                if (ItemList >= 0) {
+                    let setp = 0;
+                    for (let x = ItemList * 9; x < (ItemList + 1) * 9 && x < BlockConfig.length; x++) {
+                        let item = BlockConfig[x];
+                        document.getElementById((x - (ItemList * 9) + 2) + "-icon").className = "icon items-28-" + item.id + "-0 icoAuto";
+                        document.getElementById((x - (ItemList * 9) + 2) + "-icon").innerHTML = item.id;
+                        setp = 1;
+                    }
+                    if (ItemList > 0)
+                        ItemList -= setp;
+                }
+            if (keycode == 67)
+                if (window.confirm('Confirm to switch to creative mode?')) {
+                    window.location.href = window.location.href + "?mode=creative"; url.split('?');
+                    return true;
+                } else {
+                    //alert("取消");
+                    return false;
+                }
+            if (keycode == 70)
+                if (window.confirm('Confirm to switch to fight mode?')) {
+                    window.location.href = window.location.href.split('?')[0];
+                    return true;
+                } else {
+                    //alert("取消");
+                    return false;
+                }
+            if (keycode == 73) {
+                alert("Jump to info page soon");
+                window.location.href = "info.html"
+            }
+        }
+
+        function onDocumentKeyUp(e) {
+            var keycode = e.which;
+            keys[keycode] = null;
+        }
+        document.addEventListener("keydown", onDocumentKeyDown, false);
+        document.addEventListener("keyup", onDocumentKeyUp, false);
+    </script>
+</body>
+</html>
