@@ -317,8 +317,14 @@ class View {
     }
     GetIntersectionAboutGroup() {
         this.raycaster.setFromCamera(new THREE.Vector2(0, 0), this.camera);
-        var intersects = this.raycaster.intersectObjects(this.scene.children);
+        var intersects = this.raycaster.intersectObjects(this.scene.children.filter(c => c.type == "Group"), true);
         return intersects;
+    }
+    FindFatherGroup(Object) {
+        if (Object.type == "Group")
+            return Object;
+        else
+            return this.FindFatherGroup(Object.parent);
     }
 
     UVConstant = [

@@ -40,9 +40,26 @@ class GameLogic {
             if (this.Ticks % 5000 == 0)
                 this.NPCs.forEach(entity => {
                     if (!entity.isDeath)
-                        entity.GetRamdonMove();
+                        if (entity.Name.indexOf("Creeper") >= 0)
+                            if (this.getDistance(entity.position.x, entity.position.y, entity.position.z,
+                                this.Player.Entity.position.x, this.Player.Entity.position.y, this.Player.Entity.position.z) < 15) {
+                            }
+                            else
+                                entity.GetRamdonMove();
+                        else
+                            entity.GetRamdonMove();
                 });
             this.NPCs.forEach(entity => {
+                if (entity.Name.indexOf("Creeper") >= 0 && !entity.isDeath)
+                    if (this.getDistance(entity.position.x, entity.position.y, entity.position.z,
+                        this.Player.Entity.position.x, this.Player.Entity.position.y, this.Player.Entity.position.z) < 15) {
+                        let x = this.Player.Entity.position.x - entity.position.x;
+                        let z = this.Player.Entity.position.z - entity.position.z;
+                        let magnitude = Math.pow(Math.pow(x, 2) + Math.pow(z, 2), 0.5);
+                        x / magnitude;
+                        z /= magnitude;
+                        entity.SetMove(x, z, { x: this.Player.Entity.position.x, z: this.Player.Entity.position.z });
+                    }
                 entity.Move();
                 if (entity.isDeath && entity.Countdown > 0) {
                     entity.Countdown--;
@@ -91,7 +108,7 @@ class GameLogic {
 
     Fighting() {
         this.NPCs.forEach(entity => {
-            if (entity.Name == "creeper" && !entity.isDeath)
+            if (entity.Name.indexOf("Creeper") >= 0 && !entity.isDeath)
                 if (this.getDistance(entity.position.x, entity.position.y, entity.position.z,
                     this.Player.Entity.position.x, this.Player.Entity.position.y, this.Player.Entity.position.z) < 6) {
                     let move = {
@@ -145,17 +162,17 @@ class GameLogic {
                             }
                 }
             if (entity.blood <= 0 && !entity.isDeath) {
-                if (entity.Name == "creeper") {
+                if (entity.Name.indexOf("Creeper") >= 0) {
                     var creeper = document.getElementById("creeper");
                     creeper.volume = 0.5;
                     creeper.play();
                 }
-                if (entity.Name == "cow") {
+                if (entity.Name.indexOf("Cow") >= 0) {
                     var cow = document.getElementById("cow");
                     cow.volume = 0.5;
                     cow.play();
                 }
-                if (entity.Name == "pig") {
+                if (entity.Name.indexOf("Pig") >= 0) {
                     var pig = document.getElementById("pig");
                     pig.volume = 0.5;
                     pig.play();
@@ -173,6 +190,7 @@ class GameLogic {
     MakeNPC() {
         if (this.Ticks % 1000 == 0) {
             var NPCs = this.NPCs;
+            let Ticks = this.Ticks;
             // 生成猪
             for (let i = 0; i < 1; i++) {
                 var loader = new THREE.GLTFLoader();
@@ -180,8 +198,9 @@ class GameLogic {
                     console.log(gltf.scene);
                     gltf.scene.scale.set(0.07, 0.07, 0.07);
                     gltf.scene.position.y = 64;
+                    gltf.scene.name = "Pig" + (Ticks / 1000) + i;
                     view.scene.add(gltf.scene);
-                    let creeper = new Entity("pig", { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
+                    let creeper = new Entity(gltf.scene.name, { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
                         return world.Get(x, y, z);
                     }, world.Blocks, gltf.scene);
                     creeper.FindGround = function (x, y, z) {
@@ -203,8 +222,9 @@ class GameLogic {
                     console.log(gltf.scene);
                     gltf.scene.scale.set(0.07, 0.07, 0.07);
                     gltf.scene.position.y = 64;
+                    gltf.scene.name = "Cow" + (Ticks / 1000) + i;
                     view.scene.add(gltf.scene);
-                    let creeper = new Entity("cow", { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
+                    let creeper = new Entity(gltf.scene.name, { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
                         return world.Get(x, y, z);
                     }, world.Blocks, gltf.scene);
                     creeper.FindGround = function (x, y, z) {
@@ -229,8 +249,9 @@ class GameLogic {
                     console.log(gltf.scene);
                     gltf.scene.scale.set(0.07, 0.07, 0.07);
                     gltf.scene.position.y = 64;
+                    gltf.scene.name = "Creeper" + (Ticks / 1000) + i;
                     view.scene.add(gltf.scene);
-                    let creeper = new Entity("creeper", { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
+                    let creeper = new Entity(gltf.scene.name, { x: 0, y: 64, z: 0 }, { x: 0, z: 0 }, { x: 0, y: 0, z: 0 }, function (x, y, z) {
                         return world.Get(x, y, z);
                     }, world.Blocks, gltf.scene);
                     creeper.FindGround = function (x, y, z) {
@@ -245,6 +266,31 @@ class GameLogic {
                 });
             }
         }
+    }
+    AttackByName(name) {
+        this.NPCs.filter(entity => entity.Name == name && !entity.isDeath).forEach(element => {
+
+            let vX = element.position.x - this.Player.Entity.position.x;
+            let vZ = element.position.z - this.Player.Entity.position.z;
+            let magnitude = Math.pow(Math.pow(vX, 2) + Math.pow(vZ, 2), 0.5);
+            vX / magnitude;
+            vZ /= magnitude;
+            element.velocity.x = vX;
+            element.velocity.z = vZ;
+            element.velocity.y += 4;
+            element.blood--;
+            if (element.blood <= 0) {
+                this.Player.exp += 5;
+                if (element.Name.indexOf("Creeper") < 0)
+                    this.Player.blood += 10;
+                else
+                    this.Player.exp += 10;
+            }
+            window.setTimeout(function () { if (!element.isDeath) element.GetRamdonMove(); }, 200);
+
+            //  entity.position.y += 2;
+
+        });
     }
     Attack(position, min, max, r) {
         this.NPCs.filter(entity => entity.position.x > min.x && entity.position.x < max.x &&

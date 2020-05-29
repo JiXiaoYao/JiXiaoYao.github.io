@@ -15,7 +15,7 @@ class User {
     Armor = 0;
     /** @type {number} ¾­Ñé*/
     exp = 0;
-    MaxExp = 10000;
+    MaxExp = 1000;
     Maxblood = 100;
     /**
      * ±³°ü(5x10)

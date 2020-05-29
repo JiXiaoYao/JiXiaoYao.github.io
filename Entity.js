@@ -94,7 +94,15 @@ class Entity {
         this.Mesh.position.z = this.position.z;
         // this.Mesh.rotation.y += 0.01;
     }
-
+    SetMove(x, z, Look) {
+        this.velocity.x = x;
+        this.velocity.z = z;
+        this.Mesh.lookAt(
+            Look.x,
+            this.Mesh.position.y,
+            Look.z,
+        )
+    }
     GetRamdonMove() {
         if (Math.random() > 0) {
             if (Math.random() > 0.5)
@@ -116,7 +124,7 @@ class Entity {
                 this.Mesh.position.y,
                 this.Mesh.position.z + this.velocity.z,
             )
-            
+
             //      this.Mesh.rotation.y = MathUtils.degToRad(this.getAngle(this.velocity.x / 2, this.velocity.z / 2, 0, 1) - (Math.PI / 2));
         }
         else {
